@@ -1,0 +1,35 @@
+spring:
+  ## 数据库
+  datasource:
+    username: root # 数据库用户名
+    password: 219798 # 数据库密码
+    url: jdbc:mysql://192.168.31.57:3306/zxkssjk # 数据库连接URL（请补全具体的数据库名称）
+    driver-class-name: com.mysql.cj.jdbc.Driver # 配置MySQL的JDBC驱动类
+    type: com.alibaba.druid.pool.DruidDataSource # 指定数据源类型为Druid
+
+    # 数据源其他配置
+    druid:
+      initial-size: 5 # 初始创建的连接数
+      min-idle: 5 # 最小空闲连接数
+      max-active: 20 # 最大活动连接数
+      max-wait: 60000 # 获取连接的最大等待时间，单位为毫秒
+      time-between-eviction-runs-millis: 60000 # 两次连接空闲检查之间的时间间隔，单位为毫秒
+      min-evictable-idle-time-millis: 300000 # 连接在池中可空闲的最大时间，超过该时间的连接将被回收，单位为毫秒
+      test-while-idle: true # 在连接空闲时进行验证
+      test-on-borrow: false # 在获取连接时进行验证
+      test-on-return: false # 在归还连接时进行验证
+      pool-prepared-statements: true # 是否缓存PreparedStatement，默认为false
+      max-pool-prepared-statement-per-connection-size: 20 # 每个连接缓存PreparedStatement的最大数量
+      filters: stat,wall # 配置监控统计拦截的filters，去掉后监控界面sql无法统计；`wall`用于防火墙
+      use-global-data-source-stat: true # 启用全局的数据源统计功能
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500 # 配置合并SQL和慢SQL的阈值（单位为毫秒）
+## 初始化运行sql脚本
+  sql:
+    init:
+      schema-locations: classpath:sql/student.sql # 指定了模式初始化的SQL脚本位置。
+      mode: always # 确保每次启动时都会执行这些脚本。开发环境中可能很有用，但在生产环境中通常是不希望的行为
+      continue-on-error: true # 设置为true，即使脚本执行失败也会继续执行后续操作。
+
+## 配置mybatis的mapper.xml
+mybatis:
+  mapper-locations: classpath:org/example/rlsb_zxks/mapper/*Mapper.xml

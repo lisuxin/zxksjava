@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.rlsb_zxks.mapper.RlsbZxksMapper">
+  <resultMap id="BaseResultMap" type="org.example.rlsb_zxks.main.RlsbZxks">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="first_name" jdbcType="VARCHAR" property="firstName" />
+    <result column="last_name" jdbcType="VARCHAR" property="lastName" />
+    <result column="date_of_birth" jdbcType="DATE" property="dateOfBirth" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="postal_code" jdbcType="VARCHAR" property="postalCode" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="encrypted_password" jdbcType="VARCHAR" property="encryptedPassword" />
+    <result column="ssn_hash" jdbcType="CHAR" property="ssnHash" />
+    <result column="emergency_contact_name" jdbcType="VARCHAR" property="emergencyContactName" />
+    <result column="emergency_contact_phone" jdbcType="VARCHAR" property="emergencyContactPhone" />
+    <result column="address" jdbcType="LONGVARCHAR" property="address" />
+    <result column="profile_picture" jdbcType="LONGVARBINARY" property="profilePicture" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zxkssjk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.example.rlsb_zxks.main.RlsbZxks">
+    insert into zxkssjk (id, first_name, last_name, 
+      date_of_birth, gender, email, 
+      phone_number, city, postal_code, 
+      country, created_at, updated_at, 
+      encrypted_password, ssn_hash, emergency_contact_name, 
+      emergency_contact_phone, address, profile_picture
+      )
+    values (#{id,jdbcType=INTEGER}, #{firstName,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR}, 
+      #{dateOfBirth,jdbcType=DATE}, #{gender,jdbcType=CHAR}, #{email,jdbcType=VARCHAR}, 
+      #{phoneNumber,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{postalCode,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}, 
+      #{encryptedPassword,jdbcType=VARCHAR}, #{ssnHash,jdbcType=CHAR}, #{emergencyContactName,jdbcType=VARCHAR}, 
+      #{emergencyContactPhone,jdbcType=VARCHAR}, #{address,jdbcType=LONGVARCHAR}, #{profilePicture,jdbcType=LONGVARBINARY}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="org.example.rlsb_zxks.main.RlsbZxks">
+    update zxkssjk
+    set first_name = #{firstName,jdbcType=VARCHAR},
+      last_name = #{lastName,jdbcType=VARCHAR},
+      date_of_birth = #{dateOfBirth,jdbcType=DATE},
+      gender = #{gender,jdbcType=CHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      postal_code = #{postalCode,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      encrypted_password = #{encryptedPassword,jdbcType=VARCHAR},
+      ssn_hash = #{ssnHash,jdbcType=CHAR},
+      emergency_contact_name = #{emergencyContactName,jdbcType=VARCHAR},
+      emergency_contact_phone = #{emergencyContactPhone,jdbcType=VARCHAR},
+      address = #{address,jdbcType=LONGVARCHAR},
+      profile_picture = #{profilePicture,jdbcType=LONGVARBINARY}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, first_name, last_name, date_of_birth, gender, email, phone_number, city, 
+    postal_code, country, created_at, updated_at, encrypted_password, ssn_hash, emergency_contact_name, 
+    emergency_contact_phone, address, profile_picture
+    from zxkssjk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, first_name, last_name, date_of_birth, gender, email, phone_number, city, 
+    postal_code, country, created_at, updated_at, encrypted_password, ssn_hash, emergency_contact_name, 
+    emergency_contact_phone, address, profile_picture
+    from zxkssjk
+  </select>
+  <resultMap id="BaseResultMap" type="org.example.rlsb_zxks.main.RlsbZxks">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="first_name" jdbcType="VARCHAR" property="firstName" />
+    <result column="last_name" jdbcType="VARCHAR" property="lastName" />
+    <result column="date_of_birth" jdbcType="DATE" property="dateOfBirth" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="postal_code" jdbcType="VARCHAR" property="postalCode" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="encrypted_password" jdbcType="VARCHAR" property="encryptedPassword" />
+    <result column="ssn_hash" jdbcType="CHAR" property="ssnHash" />
+    <result column="emergency_contact_name" jdbcType="VARCHAR" property="emergencyContactName" />
+    <result column="emergency_contact_phone" jdbcType="VARCHAR" property="emergencyContactPhone" />
+    <result column="address" jdbcType="LONGVARCHAR" property="address" />
+    <result column="profile_picture" jdbcType="LONGVARBINARY" property="profilePicture" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zxkssjk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.example.rlsb_zxks.main.RlsbZxks">
+    insert into zxkssjk (id, first_name, last_name, 
+      date_of_birth, gender, email, 
+      phone_number, city, postal_code, 
+      country, created_at, updated_at, 
+      encrypted_password, ssn_hash, emergency_contact_name, 
+      emergency_contact_phone, address, profile_picture
+      )
+    values (#{id,jdbcType=INTEGER}, #{firstName,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR}, 
+      #{dateOfBirth,jdbcType=DATE}, #{gender,jdbcType=CHAR}, #{email,jdbcType=VARCHAR}, 
+      #{phoneNumber,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{postalCode,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}, 
+      #{encryptedPassword,jdbcType=VARCHAR}, #{ssnHash,jdbcType=CHAR}, #{emergencyContactName,jdbcType=VARCHAR}, 
+      #{emergencyContactPhone,jdbcType=VARCHAR}, #{address,jdbcType=LONGVARCHAR}, #{profilePicture,jdbcType=LONGVARBINARY}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="org.example.rlsb_zxks.main.RlsbZxks">
+    update zxkssjk
+    set first_name = #{firstName,jdbcType=VARCHAR},
+      last_name = #{lastName,jdbcType=VARCHAR},
+      date_of_birth = #{dateOfBirth,jdbcType=DATE},
+      gender = #{gender,jdbcType=CHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      postal_code = #{postalCode,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      encrypted_password = #{encryptedPassword,jdbcType=VARCHAR},
+      ssn_hash = #{ssnHash,jdbcType=CHAR},
+      emergency_contact_name = #{emergencyContactName,jdbcType=VARCHAR},
+      emergency_contact_phone = #{emergencyContactPhone,jdbcType=VARCHAR},
+      address = #{address,jdbcType=LONGVARCHAR},
+      profile_picture = #{profilePicture,jdbcType=LONGVARBINARY}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, first_name, last_name, date_of_birth, gender, email, phone_number, city, 
+    postal_code, country, created_at, updated_at, encrypted_password, ssn_hash, emergency_contact_name, 
+    emergency_contact_phone, address, profile_picture
+    from zxkssjk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, first_name, last_name, date_of_birth, gender, email, phone_number, city, 
+    postal_code, country, created_at, updated_at, encrypted_password, ssn_hash, emergency_contact_name, 
+    emergency_contact_phone, address, profile_picture
+    from zxkssjk
+  </select>
+</mapper>
