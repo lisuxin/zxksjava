@@ -3,13 +3,12 @@ package org.example.rlsb_zxks.server;
 import org.example.rlsb_zxks.main.RlsbZxks;
 import org.example.rlsb_zxks.mapper.RlsbZxksMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class UserServer {
+@Service
+public class UserServer implements UserServerZxks{
 
     @Autowired
     private RlsbZxksMapper rlsbZxksMapper;

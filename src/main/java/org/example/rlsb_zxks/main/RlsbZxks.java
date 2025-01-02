@@ -182,4 +182,27 @@ public class RlsbZxks {
     public void setProfilePicture(byte[] profilePicture) {
         this.profilePicture = profilePicture;
     }
+
+    public RlsbZxks() {}
+
+    public RlsbZxks(Integer id, String firstName, String lastName, Date dateOfBirth, String gender, String email, String phoneNumber, String city, String postalCode, String country, Date createdAt, Date updatedAt, String encryptedPassword, String ssnHash, String emergencyContactName, String emergencyContactPhone, String address, byte[] profilePicture) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.country = country;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.encryptedPassword = encryptedPassword;
+        this.ssnHash = ssnHash;
+        this.emergencyContactName = emergencyContactName;
+        this.emergencyContactPhone = emergencyContactPhone;
+        this.address = address;
+        this.profilePicture = profilePicture;
+    }
 }

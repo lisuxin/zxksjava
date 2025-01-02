@@ -3,7 +3,7 @@ spring:
   datasource:
     username: root # 数据库用户名
     password: 219798 # 数据库密码
-    url: jdbc:mysql://192.168.31.57:3306/zxkssjk # 数据库连接URL（请补全具体的数据库名称）
+    url: jdbc:mysql://localhost:3306/zxkssjk # 数据库连接URL（请补全具体的数据库名称）
     driver-class-name: com.mysql.cj.jdbc.Driver # 配置MySQL的JDBC驱动类
     type: com.alibaba.druid.pool.DruidDataSource # 指定数据源类型为Druid
 
@@ -26,10 +26,11 @@ spring:
 ## 初始化运行sql脚本
   sql:
     init:
-      schema-locations: classpath:sql/student.sql # 指定了模式初始化的SQL脚本位置。
+      schema-locations: classpath:sql/zxkssjk.sql # 指定了模式初始化的SQL脚本位置。
       mode: always # 确保每次启动时都会执行这些脚本。开发环境中可能很有用，但在生产环境中通常是不希望的行为
       continue-on-error: true # 设置为true，即使脚本执行失败也会继续执行后续操作。
 
 ## 配置mybatis的mapper.xml
 mybatis:
-  mapper-locations: classpath:org/example/rlsb_zxks/mapper/*Mapper.xml
+  mapper-locations: classpath*:org/example/rlsb_zxks/mapper/*Mapper.xml
+
