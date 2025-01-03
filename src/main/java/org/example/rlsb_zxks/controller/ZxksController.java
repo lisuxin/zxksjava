@@ -43,4 +43,9 @@ public class ZxksController {
     public RlsbZxks selectByPrimaryKey(@PathVariable Integer id){
         return userServer.selectByPrimaryKey(id);
     }
+
+    @PostMapping("/denglu/{row}")
+    public int off(@RequestBody RlsbZxks row){
+        return userServer.off(row);
+    }
 }

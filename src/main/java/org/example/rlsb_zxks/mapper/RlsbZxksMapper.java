@@ -16,4 +16,6 @@ public interface RlsbZxksMapper {
     List<RlsbZxks> selectAll();
 
     int updateByPrimaryKey(RlsbZxks row);
+
+    List<RlsbZxks> off();
 }

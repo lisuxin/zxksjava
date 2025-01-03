@@ -75,4 +75,8 @@
     emergency_contact_phone, address, profile_picture
     from zxkssjk
   </select>
+
+  <select id="off" resultMap="BaseResultMap">
+    select first_name,encrypted_password from zxkssjk
+  </select>
 </mapper>

@@ -13,4 +13,6 @@ public interface UserServer {
     int insert(RlsbZxks row);
 
     RlsbZxks selectByPrimaryKey(Integer id);
+
+    int off(RlsbZxks row);
 }

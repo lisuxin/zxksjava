@@ -45,5 +45,18 @@ public class UserServerImp implements UserServer {
         return rlsbZxksMapper.selectByPrimaryKey(id);
     }
 
+    @Override
+    public int off(RlsbZxks row) {
+        List list = rlsbZxksMapper.off();
+        if (row.getFirstName() == (String) list.get(0)){
+            if (row.getEncryptedPassword() == (String) list.get(1)){
+                return 2;
+            }else {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
 
 }
