@@ -24,11 +24,11 @@ spring:
       use-global-data-source-stat: true # 启用全局的数据源统计功能
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500 # 配置合并SQL和慢SQL的阈值（单位为毫秒）
 ## 初始化运行sql脚本
-  sql:
-    init:
-      schema-locations: classpath:sql/zxkssjk.sql # 指定了模式初始化的SQL脚本位置。
-      mode: always # 确保每次启动时都会执行这些脚本。开发环境中可能很有用，但在生产环境中通常是不希望的行为
-      continue-on-error: true # 设置为true，即使脚本执行失败也会继续执行后续操作。
+#  sql:
+#    init:
+#      schema-locations: classpath:sql/zxkssjk.sql # 指定了模式初始化的SQL脚本位置。
+#      mode: always # 确保每次启动时都会执行这些脚本。开发环境中可能很有用，但在生产环境中通常是不希望的行为
+#      continue-on-error: true # 设置为true，即使脚本执行失败也会继续执行后续操作。
 
 ## 配置mybatis的mapper.xml
 mybatis:

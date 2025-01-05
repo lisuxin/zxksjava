@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-//@CrossOrigin
 @RequestMapping("/zxks")
+@CrossOrigin//跨域
 public class ZxksController {
 
     @Autowired
@@ -29,12 +29,12 @@ public class ZxksController {
         return userServer.deleteByPrimaryKey(id);
     }//更具id删除某一行
 
-    @PostMapping("/insert/{insert}")
+    @PostMapping("/insert")
     public int insert(@RequestBody RlsbZxks insert){
         return userServer.insert(insert);
     }//新增
 
-    @PutMapping("/update/{row}")
+    @PutMapping("/update")
     public int  updateByPrimaryKey(@RequestBody RlsbZxks row){
         return userServer.updateByPrimaryKey(row);
     }//修改
@@ -44,7 +44,7 @@ public class ZxksController {
         return userServer.selectByPrimaryKey(id);
     }
 
-    @PostMapping("/denglu/{row}")
+    @PostMapping("/denglu")
     public int off(@RequestBody RlsbZxks row){
         return userServer.off(row);
     }

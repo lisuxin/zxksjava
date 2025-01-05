@@ -47,15 +47,18 @@ public class UserServerImp implements UserServer {
 
     @Override
     public int off(RlsbZxks row) {
-        List list = rlsbZxksMapper.off();
-        if (row.getFirstName() == (String) list.get(0)){
-            if (row.getEncryptedPassword() == (String) list.get(1)){
-                return 2;
-            }else {
-                return 1;
+        List<RlsbZxks> list = rlsbZxksMapper.off();
+        for (RlsbZxks user : list) {
+            // 比较 firstName 和 encryptedPassword
+            if (user.getFirstName().equals(row.getFirstName()) &&
+                    user.getEncryptedPassword().equals(row.getEncryptedPassword())) {
+                return 2; // 登录成功
+            } else if (user.getFirstName().equals(row.getFirstName())) {
+                return 1; // 密码错误
             }
         }
-        return 0;
+
+        return 0; // 用户名不存在
     }
 
 
