@@ -77,6 +77,14 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
+                <version>0.9.28</version>
+                <configuration>
+                    <skipTests>true</skipTests>  <!-- 禁用原生测试 -->
+                </configuration>
+            </plugin>
             <!--Mybatis-Generator插件，自动生成代码-->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
