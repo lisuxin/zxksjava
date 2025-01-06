@@ -26,6 +26,7 @@ public class UserServerImp implements UserServer {
             return age;
         }
         String age = ("未找到匹配的记录，无数据被删除。");
+
         return age;
 
     }
@@ -37,6 +38,7 @@ public class UserServerImp implements UserServer {
 
     @Override
     public int insert(RlsbZxks row) {
+        rlsbZxksMapper.alter();
         return rlsbZxksMapper.insert(row);
     }
 

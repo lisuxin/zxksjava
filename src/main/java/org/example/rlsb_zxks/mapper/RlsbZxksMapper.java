@@ -18,4 +18,6 @@ public interface RlsbZxksMapper {
     int updateByPrimaryKey(RlsbZxks row);
 
     List<RlsbZxks> off();
+
+    void alter();
 }

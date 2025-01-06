@@ -26,14 +26,14 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="org.example.rlsb_zxks.main.RlsbZxks">
-    insert into zxkssjk (id, first_name, last_name,
+    insert into zxkssjk (first_name, last_name,
       date_of_birth, gender, email,
       phone_number, city, postal_code,
       country, created_at, updated_at,
       encrypted_password, ssn_hash, emergency_contact_name,
       emergency_contact_phone, address, profile_picture
       )
-    values (#{id,jdbcType=INTEGER}, #{firstName,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR},
+    values (#{firstName,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR},
       #{dateOfBirth,jdbcType=DATE}, #{gender,jdbcType=CHAR}, #{email,jdbcType=VARCHAR},
       #{phoneNumber,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{postalCode,jdbcType=VARCHAR},
       #{country,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP},
@@ -75,8 +75,10 @@
     emergency_contact_phone, address, profile_picture
     from zxkssjk
   </select>
-
   <select id="off" resultMap="BaseResultMap">
     select first_name,encrypted_password from zxkssjk
   </select>
+  <update id="alter" >
+ALTER TABLE zxkssjk AUTO_INCREMENT = 1;
+  </update>
 </mapper>
